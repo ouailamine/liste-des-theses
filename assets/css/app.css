@@ -1,0 +1,55 @@
+body {
+    background-color: rgba(0, 0, 0, 0.192);
+
+}
+
+  
+.sf-toolbarreset{
+    background-color: #3c613c;
+  }
+.page{
+    background: rgb(187, 189, 192);
+   
+    border-radius: 1em;
+}
+  .th1{
+    font-family: "Times New Roman", Times, serif;
+    text-align: center;
+    margin-bottom: 0
+}
+
+  .th2{
+    font-family: "Times New Roman", Times, serif;
+    margin:0;
+    text-align: center;
+  }
+
+  .th3{
+    text-align: center;
+    font-family: "Times New Roman", Times, serif;
+  }
+  .example-wrapper{
+    background: rgb(167, 171, 179);
+    float: center;
+    padding: 1em;
+   
+    border-radius: 1em;
+  }
+  
+  
+  .descri{
+    background:white;
+    font-size: 14px;
+    padding: 0.5em;
+    border: 1px solid rgb(8, 4, 4);
+    border-radius: 1em;}
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    p.serif {
+        font-family: "Times New Roman", Times, serif;
+      }
+
+.r{
+        background:rgb(131, 147, 190);
+       
+        
+    }

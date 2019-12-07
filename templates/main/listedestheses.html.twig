@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title%} Liste Des Theses {% endblock %}
+
+{% block body %}
+
+<div class="page">
+<center><h1 class="th1">Liste Des Theses </h1></center>
+  {% if thesess  %}
+  
+    {% for these in thesess %}
+    <div class="example-wrapper">
+       <center>  <h2 class="th2">Titre :{{ these.titre }} </h4></center>
+        <center> <p class="th2">" {{ these.categorie }}"</p></center>
+        <div class="descri">  {{ these.description }}</div>
+        <p class="serif">contact mail :{{ these.contact }}</p>
+     <p class="serif"> Ecole :{{ these.ecole }}</p>  
+     <a href="{{ these.sweb }}"><button type="button" class="btn btn-primary">accee au site</button></a></button>
+      </div> <br> 
+  
+        {% endfor %}
+     
+  {% else %}
+  {% endif %}
+</div> 
+{% endblock %}
