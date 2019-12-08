@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20191206010059 extends AbstractMigration
+final class Version20191208121826 extends AbstractMigration
 {
     public function getDescription() : string
     {
@@ -22,7 +22,9 @@ final class Version20191206010059 extends AbstractMigration
         // this up() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('ALTER TABLE these ADD ecole VARCHAR(255) NOT NULL');
+        $this->addSql('ALTER TABLE these ADD lien_id INT DEFAULT NULL');
+        $this->addSql('ALTER TABLE these ADD CONSTRAINT FK_4334D8D7EDAAC352 FOREIGN KEY (lien_id) REFERENCES ecole (id)');
+        $this->addSql('CREATE INDEX IDX_4334D8D7EDAAC352 ON these (lien_id)');
     }
 
     public function down(Schema $schema) : void
@@ -30,6 +32,8 @@ final class Version20191206010059 extends AbstractMigration
         // this down() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('ALTER TABLE these DROP ecole');
+        $this->addSql('ALTER TABLE these DROP FOREIGN KEY FK_4334D8D7EDAAC352');
+        $this->addSql('DROP INDEX IDX_4334D8D7EDAAC352 ON these');
+        $this->addSql('ALTER TABLE these DROP lien_id');
     }
 }

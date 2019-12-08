@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title%} Liste Des Theses {% endblock %}
+
+{% block body %}
+
+<div class="page">
+<center><h1 class="th1">Liste Des Ecoles </h1></center>
+  {% if ecoles  %}
+  
+    {% for ecole in ecoles %}
+    <div class="example-wrapper">
+        <center><h4 class="th2">Nom :{{ ecole.nom }} </h4></center>
+        <center><h4 class="th2">Nom :{{ ecole.these }} </h4></center>
+      </div> <br> 
+  
+        {% endfor %}
+     
+  {% else %}
+  <p>pas d'ecole</p>
+  {% endif %}
+</div> 
+{% endblock %}

@@ -37,14 +37,14 @@ class These
     private $contact;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\ManyToOne(targetEntity="App\Entity\Ecole", inversedBy="theses")
      */
     private $ecole;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $sweb;
+    private $lien;
 
     public function getId(): ?int
     {
@@ -99,26 +99,26 @@ class These
         return $this;
     }
 
-    public function getEcole(): ?string
+    public function getEcole(): ?ecole
     {
         return $this->ecole;
     }
 
-    public function setEcole(string $ecole): self
+    public function setEcole(?ecole $ecole): self
     {
         $this->ecole = $ecole;
 
         return $this;
     }
 
-    public function getSweb(): ?string
+    public function getLien(): ?string
     {
-        return $this->sweb;
+        return $this->lien;
     }
 
-    public function setSweb(string $sweb): self
+    public function setLien(?lien $lien): self
     {
-        $this->sweb = $sweb;
+        $this->ecole = $lien;
 
         return $this;
     }
